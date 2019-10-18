@@ -1,5 +1,38 @@
+<div>
+    <input type="text" [(ngModel)] = "serverName">
+    {{serverName}}
+</div>
+<br>
+<div>
+    <button  (click)="onAddServer()"> Add Server</button>
+    <!-- [disabled]="!allowToAddServer" -->
+    <!-- {{isServerCreated}} -->
+    <p *ngIf="serverCreated; else elseBlock"> {{serverCreatedStatus}} with name {{serverName}}</p>
+    <ng-template #elseBlock>
+        <p>No Server was created.</p>
+    </ng-template>
+</div>
+ <app-server *ngFor="let item of servers"></app-server>
+<!--<app-server></app-server>
 <app-server></app-server>
-<app-server></app-server>
-<app-server></app-server>
-<button [disabled]="!allowToAddServer" (click)="onAddServer()"> Add Server</button>
-{{isServerCreated}}
+<app-server></app-server> -->
+<!-- <div style="display: inline-block">
+    <p>Students Name List</p>
+    <p *ngFor="let intern of intership">
+        {{intern.name}}
+    </p>
+</div>
+<div style="display: inline-block">
+    <p>Students Surname List</p>
+    <p *ngFor="let intern of intership">
+        {{intern.surname}}
+    </p>
+</div>
+<div style="display: inline-block">
+    <p>Students Uni List</p>
+    <p *ngFor="let intern of intership">
+        {{intern.university}}
+    </p> 
+</div>-->
+
+
